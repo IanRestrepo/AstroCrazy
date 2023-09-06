@@ -1,0 +1,27 @@
+---
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+    siteName?: string;
+}
+
+const {siteName = 'Astro Page'} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{siteName}</title>
+</head>
+    <body class="bg-gray-950 text-white">
+        <NavBar />
+            <slot />
+        <Footer />
+    </body>
+</html>
+
+<style>
+</style>

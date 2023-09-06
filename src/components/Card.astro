@@ -1,0 +1,15 @@
+---
+interface Props {
+    jobTitle: String,
+    jobDesc: String,
+    paymentAmount: Number,
+}
+
+const { jobTitle, jobDesc, paymentAmount } = Astro.props
+---
+
+<div class=" bg-emerald-950 border-2 mx-5 border-emerald-800 p-5 block rounded-md m-3 border-l-emerald-500 border-l-4">
+    <h1 class="font-bold mx-1">{jobTitle}</h1>
+    <p class="mx-1 my-">{jobDesc}</p>
+    <em class="mx-1">{paymentAmount}</em>
+</div>

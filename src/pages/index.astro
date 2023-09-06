@@ -1,0 +1,26 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Card  from '../components/Card.astro'
+const Posts = await Astro.glob('../pages/jobs/*.md')
+---
+
+<MainLayout siteName='Home | AstroCrazy'>
+
+	<div class="p-5 max-w-6xl m-auto">
+		<h1 class="text-3xl font-bold px-5">JobList</h1>
+
+	<div>
+		{
+			Posts.map((Post)=> {
+				return (
+					<Card 
+					jobTitle={Post.frontmatter.title}
+					jobDesc={Post.frontmatter.desc}
+					paymentAmount={Post.frontmatter.payment}
+					/>
+				)
+			})
+		}
+	</div>
+	</div>
+</MainLayout>
