@@ -1,0 +1,24 @@
+---
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+const {frontmatter} = Astro.props;
+---
+
+<NavBar />
+    <main class="max-w-lg border-red-900 m-auto py-20 ">
+        <h1 class="text-4xl font-bold font-mplus ">{frontmatter.title}</h1>
+        <em class="mb-10 bg-gray-950">{frontmatter.author}</em>
+        <br>
+        <br>
+        <br>
+        <slot />
+    </main>
+<Footer />
+
+<style is:global>
+    body {
+        background: rgb(3, 7, 18);
+        color: white;
+    }
+
+</style>
